@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed - Hami MiniMarket</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --primary-light: #4285f4;
+            --primary-dark: #0d47a1;
+            --navy-blue: #0a1931;
+            --navy-light: #1a3a6c;
+            --secondary: #ff9800;
+            --text: #333;
+            --text-light: #666;
+            --background: #f9f9f9;
+            --white: #fff;
+            --gray: #e0e0e0;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --success: #4caf50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--navy-blue);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+
+        .logo i {
+            color: var(--white);
+            font-size: 1.8rem;
+        }
+
+        /* Confirmation Section */
+        .confirmation {
+            padding: 4rem 5%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .confirmation-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: var(--success);
+            margin-bottom: 1.5rem;
+            animation: bounce 1s ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .confirmation h2 {
+            color: var(--navy-blue);
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+        }
+
+        .confirmation p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .order-summary {
+            background: var(--background);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .summary-line.total {
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-bottom: none;
+            border-top: 2px solid var(--primary);
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .order-details {
+            background: var(--background);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .order-details h3 {
+            color: var(--navy-blue);
+            margin-bottom: 1rem;
+        }
+
+        .order-items {
+            margin-bottom: 1.5rem;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-light);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--navy-blue);
+            color: var(--white);
+            padding: 3rem 5%;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 0.5rem;
+        }
+
+        .copyright {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .confirmation-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .navbar {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-shopping-basket"></i>
+                <h1>Hami MiniMarket</h1>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Confirmation Section -->
+    <section class="confirmation">
+        <div class="confirmation-card">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            
+            <h2>Order Confirmed!</h2>
+            <p>Thank you for shopping with Hami MiniMarket</p>
+
+            <div class="order-summary">
+                <div class="summary-line">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="summary-line">
+                    <span>Tax (5%):</span>
+                    <span id="tax">$0.00</span>
+                </div>
+                <div class="summary-line total">
+                    <span>Total:</span>
+                    <span id="total">$0.00</span>
+                </div>
+            </div>
+
+            <p>Your order has been successfully placed. We'll prepare your fresh produce with care and contact you when it's ready for pickup.</p>
+
+            <div class="button-group">
+                <a href="index.html" class="btn btn-primary">Continue Shopping</a>
+                <button class="btn btn-secondary" onclick="viewOrderDetails()">View Order Details</button>
+            </div>
+        </div>
+
+        <div class="order-details" id="orderDetails" style="display: none;">
+            <h3>Order Details</h3>
+            <div class="order-items" id="orderItems">
+                <!-- Order items will be populated here -->
+            </div>
+            <div class="order-info">
+                <p><strong>Order Number:</strong> <span id="orderNumber">HM-0001</span></p>
+                <p><strong>Estimated Pickup:</strong> <span id="pickupTime">Today, 4:00 PM</span></p>
+                <p><strong>Order Date:</strong> <span id="orderDate"></span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>HamiSkills Internship - Web Development Track</p>
+            <p>Contact us: info@hamimarket.com | +1 (555) 123-4567</p>
+            <p class="copyright">&copy; 2023 Hami MiniMarket. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Get order data from localStorage
+        function getOrderData() {
+            try {
+                const orderData = localStorage.getItem('hami_order_data');
+                if (orderData) {
+                    return JSON.parse(orderData);
+                }
+            } catch (error) {
+                console.error('Error loading order data:', error);
+            }
+            return null;
+        }
+
+        function displayOrderData(orderData) {
+            if (!orderData) {
+                // If no order data, redirect to home page
+                alert('No order found. Redirecting to home page.');
+                window.location.href = 'index.html';
+                return;
+            }
+
+            // Update summary
+            document.getElementById('subtotal').textContent = '$' + orderData.subtotal;
+            document.getElementById('tax').textContent = '$' + orderData.tax;
+            document.getElementById('total').textContent = '$' + orderData.total;
+            document.getElementById('orderNumber').textContent = orderData.orderNumber;
+            
+            // Set pickup time
+            const now = new Date();
+            const hours = now.getHours();
+            if (hours < 15) {
+                document.getElementById('pickupTime').textContent = 'Today, 4:00 PM';
+            } else {
+                document.getElementById('pickupTime').textContent = 'Tomorrow, 10:00 AM';
+            }
+            
+            // Set order date
+            document.getElementById('orderDate').textContent = new Date().toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            // Update order items
+            const orderItemsContainer = document.getElementById('orderItems');
+            if (orderData.items && orderData.items.length > 0) {
+                orderItemsContainer.innerHTML = orderData.items.map(item => `
+                    <div class="order-item">
+                        <span>${item.name} x${item.quantity}</span>
+                        <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                    </div>
+                `).join('');
+            } else {
+                orderItemsContainer.innerHTML = '<p>No items in order</p>';
+            }
+        }
+
+        function viewOrderDetails() {
+            const orderDetails = document.getElementById('orderDetails');
+            if (orderDetails.style.display === 'none') {
+                orderDetails.style.display = 'block';
+                orderDetails.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                orderDetails.style.display = 'none';
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            const orderData = getOrderData();
+            displayOrderData(orderData);
+        });
+    </script>
+</body>
+</html>
