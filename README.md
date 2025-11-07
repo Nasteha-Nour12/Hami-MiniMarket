@@ -1,0 +1,75 @@
+# 🥬 Hami MiniMarket
+
+**Fresh & Organic – Farm to Table Goodness**
+
+A modern, elegant landing page for an **organic fruits & vegetables market**.  
+Built with **HTML**, **CSS**, and **JavaScript**, designed for **speed**, **simplicity**, and **freshness** 🌱
+
+---
+
+## 🧠 Project Overview
+
+**Hami MiniMarket** is a simple yet stylish website showcasing **fresh and organic produce**.  
+It’s designed to promote **healthy living**, **local farming**, and **natural food products** — ideal for small groceries or organic shops.
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|-------------|----------|
+| **HTML5** | Structure of the webpage |
+| **CSS3** | Styling and responsive layout |
+| **JavaScript (ES6)** | Image slider & form validation |
+| **Google Fonts (Poppins)** | Modern typography |
+| **Font Awesome** | Navigation and social media icons |
+
+---
+
+## 🎨 Features
+
+✅ Hero Section with auto-changing **background image slider**  
+✅ Fully **responsive navigation bar**  
+✅ Product Grid displaying **fresh fruits & vegetables**  
+✅ **About Section** describing market vision  
+✅ **Contact Form** with client-side validation  
+✅ **Footer** with social media icons  
+✅ Optimized for **mobile and desktop**
+
+---
+
+## 📱 Responsive Design
+
+Designed to adjust beautifully across all devices:
+
+- 💻 **Desktop** (≥1200px)  
+- 📱 **Tablet** (≥768px)  
+- 📞 **Mobile** (<768px)
+
+---
+
+## ⚙️ Deployment Guide (Netlify)
+
+To host your website on **Netlify**:
+
+Go to [Netlify](https://app.netlify.com/).
+
+
+---
+
+## 👩‍💻 Developer
+
+|  |  |
+|--|--|
+| **👤 Name:** | **Nasteha Nur Adan** |
+| **💻 Role:** | Front-End Developer • Graphic Designer • Mern Stack |
+| **🌍 Location:** | Muqdisho, Somalia |
+| **✨ Quote:** | “Design with purpose, build with passion.” |
+
+---
+
+
+
+---
+
+⭐ **If you like this project, don’t forget to give it a star on GitHub!** ⭐
